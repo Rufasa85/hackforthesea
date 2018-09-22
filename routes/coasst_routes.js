@@ -1,4 +1,14 @@
 module.exports = function(app, db) {
+  const cloudinary = require('cloudinary');
+  const apiKeys = require('../apikeys.js');
+  const multer = require('multer');
+  const uploads = multer({dest:'../uploads'});
+
+  cloudinary.config({
+    cloud_name:apiKeys.cloudName,
+    api_key:apiKeys.apiKey,
+    api_secret:apiKeys.apiSecret
+  })
 
   // Pull all the latest images and debris metadata to display
   app.get('/', function (req, res) {
@@ -18,6 +28,7 @@ module.exports = function(app, db) {
       }
     })
   })
+
   // Creates a new coasst debris record
   app.post('/', function (req, res) {
     // Lets take our post data and store in in mongo
@@ -35,7 +46,15 @@ module.exports = function(app, db) {
 
   // HTML functionality to take the image and create debris metadata
   app.get('/new', function (req, res) {
-    // Nothing to really do here except serve up the view
-    res.render('new');
+    console.log(req.query.url)
+    res.render('new', {imageUrl:req.query.url});
+  })
+  app.get('/upload', function(req,res){
+    res.render('upload');
+  })
+  app.post('/upload',uploads.single('imageUpload'),function(req,res){
+    cloudinary.uploader.upload(req.file.path,function(result){
+      res.redirect(`/new?url=${result.url}`);
+    })
   })
 };
