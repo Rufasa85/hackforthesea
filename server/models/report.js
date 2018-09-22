@@ -8,7 +8,7 @@ var Report = mongoose.model('Report', {
     required: true,
     trim: true,
     minlength: 1,
-    unique: true,
+    unique: false,  //  image ids are unique???
     validate: {
       validator: validator.isURL,
       message: '{VALUE} is not a valid URL'
@@ -25,25 +25,20 @@ var Report = mongoose.model('Report', {
     minlength: 3
   },  
   geolocation: [{
-    primary: {
+    lat: {
       type: Number,
       required: true
     },
-    secondary: {
+    long: {
       type: Number,
-      required: false
+      required: true
     }
   }],
-  material: [{
-    primary: {
-      type: String,
-      required: true
-    },
-    secondary: {
-      type: String,
-      required: false
-    }
-  }]
+  material: {
+    type: Number,
+    require: true,
+    minlength: 3
+  }
 });
 
 module.exports = {Report}

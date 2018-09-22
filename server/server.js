@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const {ObjectID} = require('mongodb');
 
 var {mongoose} = require('./db/mongoose');
-var {Todo} = require('./models/report');
+var {Report} = require('./models/report');
 var {User} = require('./models/user');
 
 var app = express();
@@ -26,9 +26,31 @@ app.post('/todos', (req, res) => {
   });
 });
 
-app.get('/todos', (req, res) => {
-  Todo.find().then((todos) => {
-    res.send({todos});
+app.get('/create_new_report_dummy', (req, res) => {
+
+  var string1 = "thing1"
+  var string2 = "thing2"
+  var report = new Report(
+    {
+      img_url: "https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      color: "Orange",
+      size: 1500.0,
+      geolocation: [0.0, 0.0],
+      material: 5
+      
+    }
+  );
+
+  report.save().then((doc) => {
+    res.send(doc);
+  }, (e) => {
+    res.status(400).send(e);
+  });
+});
+
+app.get('/stuff', (req, res) => {
+  Reports.find().then((reports) => {
+    res.send({reports});
   }, (e) => {
     res.status(400).send(e);
   });
