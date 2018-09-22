@@ -12,7 +12,9 @@ module.exports = function(app, db) {
       }
       else {
         // Lets build our view with the collection data
-        res.render('index');        
+        res.render('index', {
+          metadata: result
+        });        
       }
     })
   })

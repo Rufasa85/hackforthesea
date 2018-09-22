@@ -7,17 +7,15 @@
 <body>
 	<h1>Debris Photos</h1>
 	<div class="debrisContainer">
-		<div class='debrisPhotoDiv'><img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></div>
-		<div class='debrisPhotoDiv'><img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></div>
-		<div class='debrisPhotoDiv'><img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></div>
-		<div class='debrisPhotoDiv'><img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></div>
-		<div class='debrisPhotoDiv'><img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></div>
-		<div class='debrisPhotoDiv'><img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></div>
-		<div class='debrisPhotoDiv'><img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></div>
-		<div class='debrisPhotoDiv'><img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></div>
-		<div class='debrisPhotoDiv'><img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></div>
-		<div class='debrisPhotoDiv'><img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></div>
-		<div class='debrisPhotoDiv'><img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></div>
+		<div class='debrisPhotoDiv'>
+			<img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+		</div>
+		<% metadata.forEach(function(data) { %>
+       	<div class="debrisPhotoDiv">
+			<img class='debrisPhoto' src="<%= data.image %>">
+			<p style="text-align:center"><%= data.date %></p>
+		</div>
+		<% }); %>
 	</div>
 </body>
 </html>
