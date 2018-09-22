@@ -1,12 +1,29 @@
-<h1>I found some new debris!</h1>
-<form>
-	<input type="file">
-	<input type="color" name="color">
-	<input type="checkbox" name='material' value="plastic"> Plastic 
-	<input type="checkbox" name='material' value="metal"> Metal
-	<input type="checkbox" name='material' value="wood"> Wood
-	<input type='checkbox' name='material' value ='glass'> Glass
-	<input id = 'location' type="text" name="location" value='' hidden>
-	<script type="text/javascript" src="../scripts/geolocation.js"></script>
-	<input type="submit">
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../styles/styles.css">
+</head>
+<body>
+	<h1>I found some new debris!</h1>
+	<form>
+		<input type="file"><br>
+		<input type="color" name="color"><br>
+		<input type="checkbox" name='material' value="plastic"> Plastic <br>
+		<input type="checkbox" name='material' value="metal"> Metal<br>
+		<input type="checkbox" name='material' value="wood"> Wood<br>
+		<input type='checkbox' name='material' value ='glass'> Glass<br>
+		<input type="number" name="number"> <br>
+		<div id='lengthDiv'>
+			<h3 id='screenWidth' class='center'>~8cm</h3>
+			<img id='lengthStrip'src="../assets/drawisland.png">
+		</div>
+			
+		</div>
+		<input id = 'location' type="text" name="location" value='' hidden>
+		<input type="submit">
+		<script type="text/javascript" src="../scripts/geolocation.js"></script>
+		<script type="text/javascript" src="../scripts/screenwidth.js"></script>
+	</form>
+</body>
+</html>
