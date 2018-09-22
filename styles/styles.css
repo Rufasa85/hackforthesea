@@ -9,7 +9,18 @@
 	width:200px;
 }
 
+.center {
+	text-align: center;
+}
+
 .debrisPhoto {
 	height: 100%;
 	width:100%;
+}
+#lengthDiv{
+	width: 100vw;
+}
+#lengthStrip {
+	width: 100%;
+	height: 200px;
 }
