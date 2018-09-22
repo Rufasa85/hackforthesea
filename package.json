@@ -2,7 +2,7 @@
   "name": "coasst",
   "version": "1.0.0",
   "description": "Coasst Hackathon ",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

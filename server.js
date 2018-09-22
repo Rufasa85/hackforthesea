@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 MongoClient.connect(db.url, (err, database) => {
-  if (err) return cnosole.log(err)
+  if (err) return console.log(err)
   require('./routes')(app, database);
 
   app.listen(port, () => {
