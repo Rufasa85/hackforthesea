@@ -7,7 +7,6 @@
 <body>
 	<h1>I found some new debris!</h1>
 	<form action='/' method='POST'  enctype="multipart/form-data">
-		<input type="file" name = 'imageUpload' id = 'imageUpload'><br>
 		<select id = 'colorPicker'>
 			<option value='blue'>Blue</option>
 			<option value='green'>Green</option>
@@ -22,12 +21,13 @@
 		<input type="checkbox" name='material' value="metal"> Metal<br>
 		<input type="checkbox" name='material' value="wood"> Wood<br>
 		<input type='checkbox' name='material' value ='glass'> Glass<br>
-		<input type="number" name="number"> <br>
+		<input type="length" name="number"> <br>
 		<div id='lengthDiv'>
 			<h3 id='screenWidth' class='center'>~8cm</h3>
 			<img id='lengthStrip'src="../assets/drawisland.png">
 		</div>
 		<input id = 'location' type="text" name="location" value='' hidden>
+		<input type="text" name="imageUrl" value=<%=imageUrl%>/ hidden>
 		<input type="submit">
 		<script type="text/javascript" src="scripts/geolocation.js"></script>
 		<script type="text/javascript" src="scripts/colorpicker.js"></script>
