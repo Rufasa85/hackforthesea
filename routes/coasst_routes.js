@@ -18,14 +18,23 @@ module.exports = function(app, db) {
   })
   app.post('/', uploads.single('imageUpload'),
   function (req, res) {
-    cloudinary.uploader.upload(req.file.path, function (result) {
-      console.log(result.url);
-      res.send(result.url);
-      // db.collection('metadata').insert(req.body, (err, results) => {});
-      // res.redirect('/');
-    })
+    // cloudinary.uploader.upload(req.file.path, function (result) {
+    //   console.log(result.url);
+    //   res.send(result.url);
+    db.collection('metadata').insert(req.body, (err, results) => {});
+    res.redirect('/');
+    // })
   })
   app.get('/new', function (req, res) {
-    res.render('new');
+    console.log(req.query.url)
+    res.render('new', {imageUrl:req.query.url});
+  })
+  app.get('/upload', function(req,res){
+    res.render('upload');
+  })
+  app.post('/upload',uploads.single('imageUpload'),function(req,res){
+    cloudinary.uploader.upload(req.file.path,function(result){
+      res.redirect(`/new?url=${result.url}`);
+    })
   })
 };
