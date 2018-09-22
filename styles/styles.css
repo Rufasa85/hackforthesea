@@ -1,0 +1,15 @@
+.debrisContainer {
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: right;
+}
+
+.debrisPhotoDiv {
+	height: 200px;
+	width:200px;
+}
+
+.debrisPhoto {
+	height: 100%;
+	width:100%;
+}
