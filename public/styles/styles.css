@@ -45,8 +45,7 @@ input[type=checkbox] {
 }
 
 .lengthInput{
-	width:80%;
-	display: inline-block;
+	width:100%;
 	font-size:2em;
 }
 
