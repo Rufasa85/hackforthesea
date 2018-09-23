@@ -62,6 +62,7 @@ module.exports = function(app, db) {
   app.get('/:id', function(req,res){
     db.collection('metadata').find({}).toArray(function(err,result){
       let metadata = {};
+      // res.send(result)
       result.forEach(entry=>{
         if(entry._id==req.params.id){
           metadata = entry
