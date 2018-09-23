@@ -72,7 +72,7 @@
 					<% metadata.forEach(function(data) { %>
 						<% if(data.imageUrl !== "undefined") { %>
 				       	<div class="debrisPhotoDiv">
-							<img onclick="showModal(<% data %>)" class='debrisPhoto' src=<%= data.imageUrl %>>
+							<img class='debrisPhoto' src=<%= data.imageUrl %>>
 						</div>
 						<% } %>
 					<% }); %>
@@ -81,8 +81,9 @@
 		</div>
 		<script>
 			function showModal(data) {
-				$('#myModal').on('show.bs.modal', function(e) {
-					console.log("Change");
+				console.log(data)
+				$('#myModal').on('show.bs.modal', function(data) {
+					console.log(data);
 					$('#modal_text').text("Yaaaa");
 				});
 				$('#myModal').modal('show');
