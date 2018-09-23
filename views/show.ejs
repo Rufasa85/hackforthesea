@@ -12,11 +12,21 @@
 
 </head>
 <body>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+				$('#back').click(function() {
+				    window.location.replace("/");
+
+				});
+			});
+        });
+        </script>
 	<div class="container">
 		<div class="row top-buffer">
 			<div class="col-sm-12">
 				<div class="debrisPhotoDiv">
-					<img class='img-fluid' src=<%= data.imageUrl %>>
+					<img class='img-fluid' src=<%= metadata.imageUrl %>>
 				</div>
 			</div>
 		</div>
@@ -45,6 +55,9 @@
 				  <li class="list-group-item active"><%= metadata.location %></li>
 				</ul>
 			</div>
+		</div>
+		<div class="row top-buffer">
+			<button id="back" type="button" class="btn-xlarge btn-primary">Back</button>
 		</div>
 	</div>
 </body>
