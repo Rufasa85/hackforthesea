@@ -34,11 +34,9 @@
 			<div class="col-sm-12">
 				<ul class="list-group">
 				  <li class="list-group-item active">Materials</li>
-				  	<%if(metadata.material){%>
 						<% metadata.material.forEach(function(data) { %>
 					  		<li class="list-group-item"><%= data %></li>
-						<% }); %>
-						<%}%>
+					  	<%})%>
 				</ul>
 			</div>
 		</div>
