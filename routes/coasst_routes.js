@@ -59,4 +59,15 @@ module.exports = function(app, db) {
       res.redirect(`/new?url=${result.url}`);
     })
   })
+  app.get('/:id', function(req,res){
+    db.collection('metadata').find({}).toArray(function(err,result){
+      let metadata = {};
+      result.forEach(entry=>{
+        if(entry._id==req.params.id){
+          metadata = entry
+        }
+      })
+      res.render('show', {metadata:metadata})
+    })
+  })
 };

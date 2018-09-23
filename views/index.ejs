@@ -72,7 +72,7 @@
 					<% metadata.forEach(function(data) { %>
 						<% if(data.imageUrl !== "undefined") { %>
 				       	<div class="debrisPhotoDiv">
-							<img class='debrisPhoto' src=<%= data.imageUrl %>>
+							<a href="/<%=data._id%>"><img class='debrisPhoto' src=<%= data.imageUrl %>></a>
 						</div>
 						<% } %>
 					<% }); %>
