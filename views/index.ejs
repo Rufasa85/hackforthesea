@@ -34,13 +34,18 @@
 				</div>
             </div>
         </div> -->
-        <div class="col-sm-12">
+        <div class="col-sm-9">
         	<button id="reload" type="button" class="btn-xlarge btn-primary">Reload Photos</button>
        		<button id="filter" type="button" class="btn-xlarge btn-primary">Filter Photos</button>
-       		<button id="upload" type="button" class="btn-xlarge btn-warning">Upload</button>
-
-
-        </div>
+       	</div>
+	    <div class="col-sm-3">
+	       	<form action="/upload" id='uploadBtn' method='POST' enctype="multipart/form-data">
+				<!-- <input type="file" name = 'imageUpload' id ='imageUpload'><br> -->
+				<label id="upload" class="btn-xlarge btn-warning">Upload
+					<input type="file" style="display: none;">
+				</label>
+			</form>
+	    </div>
 
         <script type="text/javascript">
         $(document).ready(function () {
@@ -48,11 +53,11 @@
 				$('#reload').click(function() {
 				    location.reload();
 				});
-				$('#upload').click(function() {
-				    window.location.href = "/upload";
+				$('#upload').change(function() {
+				    $('#uploadBtn').submit();
 				});
 				$('#filter').click(function() {
-					
+
 				});
 			});
         });
