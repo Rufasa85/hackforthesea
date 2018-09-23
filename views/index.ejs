@@ -65,7 +65,7 @@
 						<img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
 					</div>
 					<% metadata.forEach(function(data) { %>
-						<% if(data.imageUrl.localeCompare("undefined") == 0) { %>
+						<% if(data.imageUrl !== "undefined") { %>
 				       	<div class="debrisPhotoDiv">
 							<img class='debrisPhoto' src=<%= data.imageUrl %>>
 						</div>
