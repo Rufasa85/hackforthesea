@@ -1,6 +1,5 @@
 module.exports = function(app, db) {
   const cloudinary = require('cloudinary');
-  // const apiKeys = require('../apikeys.js');
   const multer = require('multer');
   const uploads = multer({dest:'../uploads'});
   require('dotenv').config();
