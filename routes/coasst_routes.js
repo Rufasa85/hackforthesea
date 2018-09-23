@@ -32,6 +32,7 @@ module.exports = function(app, db) {
 
   // Creates a new coasst debris record
   app.post('/', function (req, res) {
+    // res.send(req.body)
     // Lets take our post data and store in in mongo
     db.collection('metadata').insert(req.body, (err, results) => {
       // If there was an error, lets respond back with a 500
