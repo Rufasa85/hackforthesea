@@ -10,8 +10,9 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
+let databaseUrl = process.env.DB || db.url
 
-MongoClient.connect(db.url, (err, database) => {
+MongoClient.connect(databaseUrl, (err, database) => {
   if (err) return console.log(err)
   require('./routes')(app, database);
 
