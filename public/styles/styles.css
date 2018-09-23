@@ -134,6 +134,20 @@ img {
             border-radius: 8px;
 }
 
+.btn-back {
+	font-weight: bold;
+    padding: 15px 22px;
+    font-size: 10px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+#whatever {
+	margin: 0 auto;
+}
+
 .top-buffer { 
   margin-top:15px; 
 }

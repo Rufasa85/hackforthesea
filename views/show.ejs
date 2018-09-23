@@ -25,8 +25,8 @@
 	<div class="container">
 		<div class="row top-buffer">
 			<div class="col-sm-12">
-				<div class="debrisPhotoDiv">
-					<img class='img-fluid' src=<%= metadata.imageUrl %>>
+				<div  id="whatever" class="debrisPhotoDiv">
+					<img class= img-fluid' src=<%= metadata.imageUrl %>>
 				</div>
 			</div>
 		</div>
@@ -34,8 +34,8 @@
 			<div class="col-sm-12">
 				<ul class="list-group">
 				  <li class="list-group-item active">Materials</li>
-					<% metadata.materialforEach(function(data) { %>
-				  		<li class="list-group-item active"><%= data %></li>
+					<% metadata.material.forEach(function(data) { %>
+				  		<li class="list-group-item"><%= data %></li>
 					<% }); %>
 				</ul>
 			</div>
@@ -44,7 +44,7 @@
 			<div class="col-sm-12">
 				<ul class="list-group">
 				  <li class="list-group-item active">Size</li>
-				  <li class="list-group-item active"><%= metadata.number %> cms</li>
+				  <li class="list-group-item"><%= metadata.number %> cms</li>
 				</ul>
 			</div>
 		</div>
@@ -52,12 +52,14 @@
 			<div class="col-sm-12">
 				<ul class="list-group">
 				  <li class="list-group-item active">Geolocation</li>
-				  <li class="list-group-item active"><%= metadata.location %></li>
+				  <li class="list-group-item"><%= metadata.location %></li>
 				</ul>
 			</div>
 		</div>
 		<div class="row top-buffer">
-			<button id="back" type="button" class="btn-xlarge btn-primary">Back</button>
+			<div class="col-sm-12">
+				<button id="back" type="button" class="btn-back btn-primary">Back</button>
+			</div>
 		</div>
 	</div>
 </body>
