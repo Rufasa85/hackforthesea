@@ -1,21 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Coasst</title>
+	<script src="../scripts/jquery.js"></script>
+	<script src="../scripts/bootstrap.min.js"></script>
+	<script src="../scripts/moment.js"></script>
+	<script src="../scripts/datetimepicker.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="../styles/styles.css">
+	<link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css">
 </head>
 <body>
-	<h1>Debris Photos</h1>
-	<div class="debrisContainer">
-		<div class='debrisPhotoDiv'>
-			<img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h4 class="text-center">Coasst Debris Photos</h4>
+			</div>
 		</div>
-		<% metadata.forEach(function(data) { %>
-       	<div class="debrisPhotoDiv">
-			<img class='debrisPhoto' src=<%= data.imageUrl %>>
-			<p style="text-align:center"><%= data.date %></p>
+    	<div class="row">
+        <div class='col-sm-12'>
+            <div class="form-group">
+				<div id="picker" class="input-group date" data-provide="datepicker">
+				    <input type="text" class="form-control">
+				    <div class="input-group-addon">
+				        <span class="glyphicon glyphicon-calendar"></span>
+				    </div>
+				</div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+                $('#picker').on('changeDate', function(event) {
+    				console.log(event.format());
+				});
+			});
+        });
+        </script>
+    	</div>
+		<div class="row">
+			<div class="col-sm-12">			
+				<div class="debrisContainer">
+					<div class='debrisPhotoDiv'>
+						<img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+					</div>
+					<% metadata.forEach(function(data) { %>
+			       	<div class="debrisPhotoDiv">
+						<img class='debrisPhoto' src=<%= data.imageUrl %>>
+						<p style="text-align:center"><%= data.date %></p>
+					</div>
+					<% }); %>
+				</div>
+			</div>
 		</div>
-		<% }); %>
 	</div>
 </body>
 </html>
