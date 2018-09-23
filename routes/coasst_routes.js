@@ -3,11 +3,12 @@ module.exports = function(app, db) {
   const apiKeys = require('../apikeys.js');
   const multer = require('multer');
   const uploads = multer({dest:'../uploads'});
+  require('dotenv').config();
 
   cloudinary.config({
-    cloud_name:apiKeys.cloudName,
-    api_key:apiKeys.apiKey,
-    api_secret:apiKeys.apiSecret
+    cloud_name:process.env.CLOUD_NAME,
+    api_key:process.env.API_KEY,
+    api_secret:process.env.API_SECRET
   })
 
   // Pull all the latest images and debris metadata to display
