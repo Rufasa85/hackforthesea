@@ -53,9 +53,11 @@ img {
 }
 
 
+
 .btn-xlarge {
+	font-weight: bold;
     padding: 15px 22px;
-    font-size: 35px;
+    font-size: 30px;
     line-height: normal;
     -webkit-border-radius: 8px;
        -moz-border-radius: 8px;
