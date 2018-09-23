@@ -31,7 +31,7 @@ span{
 .formFlex{
 	width:45%;
 	background:#ecf0f1;
-	height: 30vh;
+	height: 25vh;
 	border-radius: 5px;
 	box-shadow: 1px 1px black;
 }
@@ -81,6 +81,7 @@ input[type=checkbox] {
 }
 
 #checkboxes {
+	width:50vw;
 	display: flex;
 	justify-content: space-between;
 }
