@@ -62,6 +62,8 @@ input[type=checkbox] {
 #lengthStrip{
 	width: 100vw;
 	margin-top:-200px;
+	position: relative;
+	z-index: -1;
 }
 
 #formFlexBox {
