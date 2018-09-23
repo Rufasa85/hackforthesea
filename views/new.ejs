@@ -6,7 +6,9 @@
 </head>
 <body>
 	<h1 class = 'center'>I found some new debris!</h1>
-	<img src='<%=imageUrl%>'/>
+	<div id = 'formImageDiv'>
+		<img src='<%=imageUrl%>'>
+	</div>
 	<form action='/' method='POST'>
 		<div id = 'formFlexBox'>
 			<div class='formFlex' id='checkboxes'>
@@ -51,12 +53,12 @@
 		<div id='lengthDiv'>
 			<h5 class='center'>Length(cm)</h5>
 			<input class = 'lengthInput' type="text" name="number"> <br>
-			<h3 id='screenWidth' class='center'>Your phone is ~8cm across</h3>
 		</div>
-		<img id='lengthStrip'src="../assets/drawisland.png">
 		<input id = 'location' type="text" name="location" value='' hidden>
 		<input type="text" name="imageUrl" value='<%=imageUrl%>' hidden>
 		<input type="submit" id = 'finalSubmit'>
+			<h3 id='screenWidth' class='center'>Your phone is ~8cm across</h3>
+		<img id='lengthStrip'src="../assets/drawisland.png">
 		<script type="text/javascript" src="scripts/geolocation.js"></script>
 		<script type="text/javascript" src="scripts/colorpicker.js"></script>
 	</form>
