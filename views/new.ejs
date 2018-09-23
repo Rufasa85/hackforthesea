@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>I found some new debris!</h1>
-	<form action='/' method='POST'  enctype="multipart/form-data">
+	<form action='/' method='POST'>
 		<select id = 'colorPicker'>
 			<option value='blue'>Blue</option>
 			<option value='green'>Green</option>
@@ -27,7 +27,7 @@
 			<img id='lengthStrip'src="../assets/drawisland.png">
 		</div>
 		<input id = 'location' type="text" name="location" value='' hidden>
-		<input type="text" name="imageUrl" value=<%=imageUrl%>/ hidden>
+		<input type="text" name="imageUrl" value='<%=imageUrl%>' hidden>
 		<input type="submit">
 		<script type="text/javascript" src="scripts/geolocation.js"></script>
 		<script type="text/javascript" src="scripts/colorpicker.js"></script>

@@ -22,6 +22,7 @@ module.exports = function(app, db) {
       }
       else {
         // Lets build our view with the collection data
+        console.log(result)
         res.render('index', {
           metadata: result
         });        

@@ -12,7 +12,7 @@
 		</div>
 		<% metadata.forEach(function(data) { %>
        	<div class="debrisPhotoDiv">
-			<img class='debrisPhoto' src="<%= data.image %>">
+			<img class='debrisPhoto' src=<%= data.imageUrl %>>
 			<p style="text-align:center"><%= data.date %></p>
 		</div>
 		<% }); %>
