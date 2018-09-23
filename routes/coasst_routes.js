@@ -1,7 +1,7 @@
 module.exports = function(app, db) {
   const cloudinary = require('cloudinary');
   const multer = require('multer');
-  const uploads = multer({dest:'/uploads'});
+  const uploads = multer({dest:'/tmp'});
   require('dotenv').config();
 
   cloudinary.config({
