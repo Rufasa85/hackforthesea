@@ -72,42 +72,13 @@
 					<% metadata.forEach(function(data) { %>
 						<% if(data.imageUrl.localeCompare("undefined") == 0) { %>
 				       	<div class="debrisPhotoDiv">
-							<img onclick="showModal(<% data %>)" class='debrisPhoto' src=<%= data.imageUrl %>>
+							<img onclick=showModal() class='debrisPhoto' src=<%= data.imageUrl %>>
 						</div>
 						<% } %>
 					<% }); %>
 				</div>
 			</div>
 		</div>
-		<script>
-			function showModal(data) {
-				$('#myModal').on('show.bs.modal', function(e) {
-					console.log("Change");
-					$('#modal_text').text("Yaaaa");
-				});
-				$('#myModal').modal('show');
-			}
-		</script>
-
-	  	<div class="modal fade" id="myModal" role="dialog">
-	    <div class="modal-dialog">
-	    
-	      <!-- Modal content-->
-	      <div class="modal-content">
-	        <div class="modal-header">
-	          <button type="button" class="close" data-dismiss="modal">&times;</button>
-	          <h4 class="modal-title">Coasst Debris Information</h4>
-	        </div>
-	        <div class="modal-body">
-	          <p id="modal_text">Some text in the modal.</p>
-	        </div>
-	        <div class="modal-footer">
-	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        </div>
-	      </div>
-	      
-	    </div>
-	  </div>
 	</div>
 </body>
 </html>
