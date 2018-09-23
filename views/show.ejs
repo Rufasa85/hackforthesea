@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coasst</title>
+	<script src="../scripts/jquery.js"></script>
+	<script src="../scripts/bootstrap.min.js"></script>
+	<script src="../scripts/moment.js"></script>
+	<script src="../scripts/datetimepicker.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../styles/styles.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="row top-buffer">
+			<div class="col-sm-12">
+				<div class="debrisPhotoDiv">
+					<img class='img-fluid' src=<%= data.imageUrl %>>
+				</div>
+			</div>
+		</div>
+		<div class="row top-buffer">
+			<div class="col-sm-12">
+				<ul class="list-group">
+				  <li class="list-group-item active">Materials</li>
+					<% metadata.materialforEach(function(data) { %>
+				  		<li class="list-group-item active"><%= data %></li>
+					<% }); %>
+				</ul>
+			</div>
+		</div>
+		<div class="row top-buffer">
+			<div class="col-sm-12">
+				<ul class="list-group">
+				  <li class="list-group-item active">Size</li>
+				  <li class="list-group-item active"><%= metadata.number %> cms</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row top-buffer">
+			<div class="col-sm-12">
+				<ul class="list-group">
+				  <li class="list-group-item active">Geolocation</li>
+				  <li class="list-group-item active"><%= metadata.location %></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
