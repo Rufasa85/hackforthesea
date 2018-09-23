@@ -5,43 +5,53 @@
 	<link rel="stylesheet" type="text/css" href="../styles/styles.css">
 </head>
 <body>
-	<h1>I found some new debris!</h1>
+	<h1 class = 'center'>I found some new debris!</h1>
 	<form action='/' method='POST'>
-		<select id = 'colorPicker'>
-			<option value='white'>White</option>
-			<option value='red'>Red</option>
-			<option value='orange'>Orange</option>
-			<option value='yellowGold'>Yellow/Gold</option>
-			<option value='green'>Green</option>
-			<option value='blueGreen'>Blue-Green</option>
-			<option value='blue'>Blue</option>
-			<option value='violet'>Purple</option>
-			<option value='brown'>Brown</option>
-			<option value='gray'>Gray/Silver</option>
-			<option value='black'>Black</option>
-			<option value='clear'>Clear</option>
-		</select>
-		<div id = 'selectedColor'></div>
-		<br/>
-		<input type="checkbox" name='material' value="hardPlastic"> Hard Plastic <br>
-		<input type="checkbox" name='material' value="softPlastic"> Soft Plastic <br>
-		<input type="checkbox" name='material' value="foamPlastic"> Foam Plastic <br>
-		<input type="checkbox" name='material' value="paper"> Paper/Cardboard<br>
-		<input type="checkbox" name='material' value="rubber"> Rubber<br>
-		<input type="checkbox" name='material' value="cementCeramic"> Cement/Ceramic<br>
-		<input type="checkbox" name='material' value="metal"> Metal<br>
-		<input type="checkbox" name='material' value="woodBamboo"> Wood/Bamboo<br>
-		<input type='checkbox' name='material' value ='glass'> Glass<br>
-		<input type="checkbox" name='material' value="other"> Other<br>
-		<input type="checkbox" name='material' value="Unknown"> Unknown<br>
-		<input type="length" name="number"> <br>
-		<div id='lengthDiv'>
-			<h3 id='screenWidth' class='center'>~8cm</h3>
-			<img id='lengthStrip'src="../assets/drawisland.png">
+		<div id = 'formFlexBox'>
+			<div class='formFlex' id='checkboxes'>
+				<div class= 'checkFlex'>
+					<input type="checkbox" name='material' value="hardPlastic"> <span>Hard Plastic</span><br>
+					<input type="checkbox" name='material' value="softPlastic"> <span>Soft Plastic</span><br>
+					<input type="checkbox" name='material' value="foamPlastic"> <span>Foam Plastic</span><br>
+					<input type="checkbox" name='material' value="paper"> <span>Paper/Cardboard</span><br>
+					<input type="checkbox" name='material' value="rubber"> <span>Rubber</span><br>
+					<input type="checkbox" name='material' value="cementCeramic"> <span>Cement/Ceramic</span><br>
+				</div>
+				<div class= 'checkFlex'>
+					<input type="checkbox" name='material' value="metal"><span> Metal</span><br>
+					<input type="checkbox" name='material' value="wood"><span> Wood</span><br>
+					<input type="checkbox" name='material' value="bamboo"> <span>Bamboo</span><br>
+					<input type='checkbox' name='material' value ='glass'><span> Glass</span><br>
+					<input type="checkbox" name='material' value="other"> <span>Other</span><br>
+					<input type="checkbox" name='material' value="Unknown"> <span>Unknown</span><br>
+				</div>
+			</div>
+			<div id = 'selectedColor' class='formFlex'>
+				<select id = 'colorPicker'>
+					<option value='white'>White</option>
+					<option value='red'>Red</option>
+					<option value='orange'>Orange</option>
+					<option value='yellowGold'>Yellow/Gold</option>
+					<option value='green'>Green</option>
+					<option value='blueGreen'>Blue-Green</option>
+					<option value='blue'>Blue</option>
+					<option value='violet'>Purple</option>
+					<option value='brown'>Brown</option>
+					<option value='gray'>Gray/Silver</option>
+					<option value='black'>Black</option>
+					<option value='clear'>Clear</option>
+				</select>
+			</div>
 		</div>
+		<div id='lengthDiv'>
+			<h5 class='center'>Length(cm)</h5>
+			<input class = 'lengthInput' type="length" name="number"> <br>
+			<h3 id='screenWidth' class='center'>Your phone is ~8cm across</h3>
+		</div>
+		<img id='lengthStrip'src="../assets/drawisland.png">
 		<input id = 'location' type="text" name="location" value='' hidden>
 		<input type="text" name="imageUrl" value='<%=imageUrl%>' hidden>
-		<input type="submit">
+		<input type="submit" id = 'finalSubmit'>
 		<script type="text/javascript" src="scripts/geolocation.js"></script>
 		<script type="text/javascript" src="scripts/colorpicker.js"></script>
 	</form>
