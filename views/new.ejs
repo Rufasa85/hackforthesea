@@ -5,9 +5,11 @@
 	<link rel="stylesheet" type="text/css" href="../styles/styles.css">
 </head>
 <body>
-	<h1 class = 'center'>I found some new debris!</h1>
+	<h3 class = 'center newH3'>I found some new debris!</h3>
 	<div id = 'formImageDiv'>
-		<img src='<%=imageUrl%>'>
+		<!-- for local testing of image layout -->
+		<img src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+		<!-- <img src='<%=imageUrl%>'> -->
 	</div>
 	<form action='/' method='POST'>
 		<div id = 'formFlexBox'>
@@ -51,13 +53,13 @@
 			</div>
 		</div>
 		<div id='lengthDiv'>
-			<h5 class='center'>Length(cm)</h5>
-			<input class = 'lengthInput' type="text" name="number"> <br>
+			<h3 class='center newH3'>Length</h3>
+			<input class = 'lengthInput' type="number" min='1' value = '1'name="number"><span class='formSpan'>CM</span> <br>
 		</div>
 		<input id = 'location' type="text" name="location" value='' hidden>
 		<input type="text" name="imageUrl" value='<%=imageUrl%>' hidden>
 		<input type="submit" id = 'finalSubmit'>
-			<h3 id='screenWidth' class='center'>Your phone is ~8cm across</h3>
+			<h3 id='screenWidth' class='center newH3'>Your phone is ~8cm across</h3>
 		<img id='lengthStrip'src="../assets/drawisland.png">
 		<script type="text/javascript" src="scripts/geolocation.js"></script>
 		<script type="text/javascript" src="scripts/colorpicker.js"></script>

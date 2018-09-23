@@ -1,5 +1,5 @@
 span{
-	font-size:20px;
+	font-size:1.5em;
 	padding:20px;
 }
 
@@ -32,6 +32,10 @@ span{
 	box-shadow: 1px 1px black;
 }
 
+.newH3 {
+	font-size:3em;
+}
+
 input[type=checkbox] {
 	margin:10px;
   transform: scale(2);
@@ -41,7 +45,9 @@ input[type=checkbox] {
 }
 
 .lengthInput{
-	width:100%;
+	width:80%;
+	display: inline-block;
+	font-size:2em;
 }
 
 #colorPicker {
@@ -83,11 +89,12 @@ input[type=checkbox] {
 	box-shadow: 2px 2px black;
 	border-radius:5px;
 	background:#ecf0f1;
+	margin-top: 5px;
 }
 
 #formImageDiv{
-	height: 15vh;
-	width:15vh;
+	height: 25vh;
+	width:25vh;
 	margin: 0 auto;
 }
 
