@@ -45,12 +45,17 @@ img {
 }
 
 #filter{
-  margin-right: 13px;
+  margin-left: 13px;
 }
+
+#upload {
+	margin-left: 13px;
+}
+
 
 .btn-xlarge {
     padding: 15px 22px;
-    font-size: 15px;
+    font-size: 35px;
     line-height: normal;
     -webkit-border-radius: 8px;
        -moz-border-radius: 8px;

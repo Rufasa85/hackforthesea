@@ -24,7 +24,7 @@
 			</div>
 		</div>
     	<div class="row top-buffer">
-        <div class="col-sm-6">
+<!--         <div class="col-sm-4">
             <div class="form-group">
 				<div id="picker" class="input-group date" data-provide="datepicker">
 				    <input type="text" class="input-lg form-control">
@@ -33,10 +33,13 @@
 				    </div>
 				</div>
             </div>
-        </div>
-        <div class="col-sm-6">
-        	<button id="reload" type="button" class="pull-right btn-xlarge btn-primary">Reload Photos</button>
-       		<button id="filter" type="button" class="pull-right btn-xlarge btn-primary">Filter Photos</button>
+        </div> -->
+        <div class="col-sm-12">
+        	<button id="reload" type="button" class="btn-xlarge btn-primary">Reload Photos</button>
+       		<button id="filter" type="button" class="btn-xlarge btn-primary">Filter Photos</button>
+       		<button id="upload" type="button" class="btn-xlarge btn-warning">Upload</button>
+
+
         </div>
 
         <script type="text/javascript">
@@ -45,22 +48,24 @@
 				$('#reload').click(function() {
 				    location.reload();
 				});
+				$('#upload').click(function() {
+				    window.location.href = "/upload";
+				});
 				$('#filter').click(function() {
-					var date = $('#picker').data('datepicker').getFormattedDate('yyyy-mm-dd');
-				    console.log(date);
+					
 				});
 			});
         });
         </script>
     	</div>
-		<div class="row">
+		<div class="row top-buffer">
 			<div class="col-sm-12">			
 				<div class="debrisContainer">
 					<div class='debrisPhotoDiv'>
 						<img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
 					</div>
 					<% metadata.forEach(function(data) { %>
-						<% if(data.imageUrl) { %>
+						<% if(data.imageUrl.localeCompare("undefined") == 0) { %>
 				       	<div class="debrisPhotoDiv">
 							<img class='debrisPhoto' src=<%= data.imageUrl %>>
 						</div>
