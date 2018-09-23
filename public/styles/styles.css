@@ -29,7 +29,7 @@ span{
 }
 
 .formFlex{
-	width:45%;
+	width:35%;
 	background:#ecf0f1;
 	height: 25vh;
 	border-radius: 5px;
@@ -45,7 +45,7 @@ input[type=checkbox] {
   transform: scale(2);
 }
 .checkFlex {
-	width:35%;
+	width:45%;
 }
 
 .lengthInput{
