@@ -39,3 +39,26 @@ select{
 	height: 25px;
 	width: 25px;
 }
+
+img {
+    width: 100%;
+}
+
+#filter{
+  margin-right: 13px;
+}
+
+.btn-xlarge {
+    padding: 15px 22px;
+    font-size: 15px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+.top-buffer { margin-top:15px; }
+
+#headline {
+  font-size: 500%;
+}

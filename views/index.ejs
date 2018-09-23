@@ -7,32 +7,47 @@
 	<script src="../scripts/moment.js"></script>
 	<script src="../scripts/datetimepicker.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="../styles/styles.css">
 	<link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../styles/styles.css">
+
 </head>
 <body>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h4 class="text-center">Coasst Debris Photos</h4>
+				<h1 id="headline" class="text-center">Coasst Debris Photos</h1>
 			</div>
 		</div>
-    	<div class="row">
-        <div class='col-sm-12'>
+		<div class="row">
+			<div class="col-sm-12">
+				<img class="img-fluid" src=../assets/COASST_BLUE.jpg>
+			</div>
+		</div>
+    	<div class="row top-buffer">
+        <div class="col-sm-6">
             <div class="form-group">
 				<div id="picker" class="input-group date" data-provide="datepicker">
-				    <input type="text" class="form-control">
+				    <input type="text" class="input-lg form-control">
 				    <div class="input-group-addon">
 				        <span class="glyphicon glyphicon-calendar"></span>
 				    </div>
 				</div>
             </div>
         </div>
+        <div class="col-sm-6">
+        	<button id="reload" type="button" class="pull-right btn-xlarge btn-primary">Reload Photos</button>
+       		<button id="filter" type="button" class="pull-right btn-xlarge btn-primary">Filter Photos</button>
+        </div>
+
         <script type="text/javascript">
         $(document).ready(function () {
             $(function () {
-                $('#picker').on('changeDate', function(event) {
-    				console.log(event.format());
+				$('#reload').click(function() {
+				    location.reload();
+				});
+				$('#filter').click(function() {
+					var date = $('#picker').data('datepicker').getFormattedDate('yyyy-mm-dd');
+				    console.log(date);
 				});
 			});
         });
