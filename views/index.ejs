@@ -1,21 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Coasst</title>
+	<script src="../scripts/jquery.js"></script>
+	<script src="../scripts/bootstrap.min.js"></script>
+	<script src="../scripts/moment.js"></script>
+	<script src="../scripts/datetimepicker.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../styles/styles.css">
+
 </head>
 <body>
-	<h1>Debris Photos</h1>
-	<div class="debrisContainer">
-		<div class='debrisPhotoDiv'>
-			<img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1 id="headline" class="text-center">Coasst Debris Photos</h1>
+			</div>
 		</div>
-		<% metadata.forEach(function(data) { %>
-       	<div class="debrisPhotoDiv">
-			<img class='debrisPhoto' src=<%= data.imageUrl %>>
-			<p style="text-align:center"><%= data.date %></p>
+		<div class="row">
+			<div class="col-sm-12">
+				<img class="img-fluid" src=../assets/COASST_BLUE.jpg>
+			</div>
 		</div>
-		<% }); %>
+    	<div class="row top-buffer">
+<!--         <div class="col-sm-4">
+            <div class="form-group">
+				<div id="picker" class="input-group date" data-provide="datepicker">
+				    <input type="text" class="input-lg form-control">
+				    <div class="input-group-addon">
+				        <span class="glyphicon glyphicon-calendar"></span>
+				    </div>
+				</div>
+            </div>
+        </div> -->
+        <div class="col-sm-9">
+        	<button id="reload" type="button" class="btn-xlarge btn-primary">Reload Photos</button>
+       		<button id="filter" type="button" class="btn-xlarge btn-primary">Filter Photos</button>
+       	</div>
+	    <div class="col-sm-3">
+	       	<form action="/upload" id='uploadBtn' method='POST' enctype="multipart/form-data">
+				<!-- <input type="file" name = 'imageUpload' id ='imageUpload'><br> -->
+				<label id="upload" class="btn-xlarge btn-warning">Upload
+					<input type="file" name='imageUpload' id='imageUpload' style="display: none;">
+				</label>
+			</form>
+	    </div>
+
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+				$('#reload').click(function() {
+				    location.reload();
+				});
+				$('#upload').change(function() {
+				    $('#uploadBtn').submit();
+				});
+				$('#filter').click(function() {
+
+				});
+			});
+        });
+        </script>
+    	</div>
+		<div class="row top-buffer">
+			<div class="col-sm-12">			
+				<div class="debrisContainer">
+					<div class='debrisPhotoDiv'>
+						<img class= 'debrisPhoto' src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+					</div>
+					<% metadata.forEach(function(data) { %>
+						<% if(data.imageUrl !== "undefined") { %>
+				       	<div class="debrisPhotoDiv">
+							<a href="/<%=data._id%>"><img class='debrisPhoto' src=<%= data.imageUrl %>></a>
+						</div>
+						<% } %>
+					<% }); %>
+				</div>
+			</div>
+		</div>
+		<script>
+			function showModal(data) {
+				console.log(data)
+				$('#myModal').on('show.bs.modal', function(data) {
+					console.log(data);
+					$('#modal_text').text("Yaaaa");
+				});
+				$('#myModal').modal('show');
+			}
+		</script>
+
+	  	<div class="modal fade" id="myModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Coasst Debris Information</h4>
+	        </div>
+	        <div class="modal-body">
+	          <p id="modal_text">Some text in the modal.</p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
 	</div>
 </body>
 </html>

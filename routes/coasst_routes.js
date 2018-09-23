@@ -1,13 +1,13 @@
 module.exports = function(app, db) {
   const cloudinary = require('cloudinary');
-  const apiKeys = require('../apikeys.js');
   const multer = require('multer');
-  const uploads = multer({dest:'../uploads'});
+  const uploads = multer({dest:'/tmp'});
+  require('dotenv').config();
 
   cloudinary.config({
-    cloud_name:apiKeys.cloudName,
-    api_key:apiKeys.apiKey,
-    api_secret:apiKeys.apiSecret
+    cloud_name:process.env.CLOUD_NAME,
+    api_key:process.env.API_KEY,
+    api_secret:process.env.API_SECRET
   })
 
   // Pull all the latest images and debris metadata to display
@@ -32,6 +32,7 @@ module.exports = function(app, db) {
 
   // Creates a new coasst debris record
   app.post('/', function (req, res) {
+    // res.send(req.body)
     // Lets take our post data and store in in mongo
     db.collection('metadata').insert(req.body, (err, results) => {
       // If there was an error, lets respond back with a 500
@@ -56,6 +57,18 @@ module.exports = function(app, db) {
   app.post('/upload',uploads.single('imageUpload'),function(req,res){
     cloudinary.uploader.upload(req.file.path,function(result){
       res.redirect(`/new?url=${result.url}`);
+    })
+  })
+  app.get('/:id', function(req,res){
+    db.collection('metadata').find({}).toArray(function(err,result){
+      let metadata = {};
+      // res.send(result)
+      result.forEach(entry=>{
+        if(entry._id==req.params.id){
+          metadata = entry
+        }
+      })
+      res.render('show', {metadata:metadata})
     })
   })
 };

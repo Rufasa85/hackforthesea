@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coasst</title>
+	<script src="../scripts/jquery.js"></script>
+	<script src="../scripts/bootstrap.min.js"></script>
+	<script src="../scripts/moment.js"></script>
+	<script src="../scripts/datetimepicker.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../styles/styles.css">
+
+</head>
+<body>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+				$('#back').click(function() {
+				    window.location.replace("/");
+
+				});
+			});
+        });
+        </script>
+	<div class="container">
+		<div class="row top-buffer">
+			<div class="col-sm-12">
+				<div  id="whatever" class="debrisPhotoDiv">
+					<img class= img-fluid' src=<%= metadata.imageUrl %>>
+				</div>
+			</div>
+		</div>
+		<div class="row top-buffer">
+			<div class="col-sm-12">
+				<ul class="list-group">
+				  <li class="list-group-item active">Materials</li>
+					
+						<%if(metadata.material){%>
+					  		<li class="list-group-item"><%= metadata.material %></li>
+					  	<%}%>
+				</ul>
+			</div>
+		</div>
+		<div class="row top-buffer">
+			<div class="col-sm-12">
+				<ul class="list-group">
+				  <li class="list-group-item active">Size</li>
+				  <%if(metadata.number) {%>
+				  	<li class="list-group-item"><%= metadata.number %> cms</li>
+				  <%} %>
+				</ul>
+			</div>
+		</div>
+		<div class="row top-buffer">
+			<div class="col-sm-12">
+				<ul class="list-group">
+				  <li class="list-group-item active">Geolocation</li>
+				  <li class="list-group-item"><%= metadata.location %></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row top-buffer">
+			<div class="col-sm-12">
+				<button id="back" type="button" class="btn-back btn-primary">Back</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

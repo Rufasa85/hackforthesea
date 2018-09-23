@@ -2,33 +2,66 @@
 <html>
 <head>
 	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../styles/styles.css">
 </head>
 <body>
-	<h1>I found some new debris!</h1>
+	<h3 class = 'center newH3'>I found some new debris!</h3>
+	<div id = 'formImageDiv'>
+		<!-- for local testing of image layout -->
+		<!-- <img src="https://images.pexels.com/photos/532548/pexels-photo-532548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"> -->
+		 <img id='formImage' src='<%=imageUrl%>'> 
+	</div>
 	<form action='/' method='POST'>
-		<select id = 'colorPicker'>
-			<option value='blue'>Blue</option>
-			<option value='green'>Green</option>
-			<option value='red'>Red</option>
-			<option value='gray'>Gray</option>
-			<option value='orange'>Orange</option>
-			<option value='violet'>Purple</option>
-		</select>
-		<div id = 'selectedColor'></div>
-		<br/>
-		<input type="checkbox" name='material' value="plastic"> Plastic <br>
-		<input type="checkbox" name='material' value="metal"> Metal<br>
-		<input type="checkbox" name='material' value="wood"> Wood<br>
-		<input type='checkbox' name='material' value ='glass'> Glass<br>
-		<input type="length" name="number"> <br>
+		<div id = 'formFlexBox'>
+			<div class='formFlex' id='checkboxes'>
+				<div class= 'checkFlex'>
+					<input type="checkbox" name='material' value="hardPlastic"> <span>Hard Plastic</span><br>
+					<input type="checkbox" name='material' value="softPlastic"> <span>Soft Plastic</span><br>
+					<input type="checkbox" name='material' value="foamPlastic"> <span>Foam Plastic</span><br>
+					<input type="checkbox" name='material' value="paper"> <span>Paper/Cardboard</span><br>
+					<input type="checkbox" name='material' value="rubber"> <span>Rubber</span><br>
+					<input type="checkbox" name='material' value="cementCeramic"> <span>Cement/Ceramic</span><br>
+				</div>
+				<div class= 'checkFlex'>
+					<input type="checkbox" name='material' value="metal"><span> Metal</span><br>
+					<input type="checkbox" name='material' value="wood"><span> Wood</span><br>
+					<input type="checkbox" name='material' value="bamboo"> <span>Bamboo</span><br>
+					<input type='checkbox' name='material' value ='glass'><span> Glass</span><br>
+					<input type="checkbox" name='material' value="other"> <span>Other</span><br>
+					<input type="checkbox" name='material' value="Unknown"> <span>Unknown</span><br>
+				</div>
+			</div>
+			<div id = 'selectedColor' class='formFlex'>
+				<select id = 'colorPicker' name = 'color'>
+					<option value='#F0F1F3'>White</option>
+					<option value='#CA0C00'>Red</option>
+					<option value='#CC3900'>Orange-Red</option>
+					<option value='#F35400'>Orange</option>
+					<option value='#FCAC01'>Golden Yellow</option>
+					<option value='#F3E513'>Yellow</option>
+					<option value='#01A21D'>Yellow Green</option>
+					<option value='#007447'>Green</option>
+					<option value='#039A96'>Torquoise</option>
+					<option value='#0632AD'>Blue</option>
+					<option value='#5A2E6B'>Violet</option>
+					<option value='#6B002D'>Deep Purple</option>
+					<option value='#4F3220'>Brown</option>
+					<option value='#8A8F8B'>Gray/Silver</option>
+					<option value='#0E0C0D'>Black</option>
+					<option value='white'>Clear</option>
+				</select>
+			</div>
+		</div>
 		<div id='lengthDiv'>
-			<h3 id='screenWidth' class='center'>~8cm</h3>
-			<img id='lengthStrip'src="../assets/drawisland.png">
+			<h3 class='center newH3'>Length(CM)</h3>
+			<input class = 'lengthInput' type="number" min='1' value = '1'name="number"><br>
 		</div>
 		<input id = 'location' type="text" name="location" value='' hidden>
 		<input type="text" name="imageUrl" value='<%=imageUrl%>' hidden>
-		<input type="submit">
+		<input type="submit" id = 'finalSubmit'>
+			<h3 id='screenWidth' class='center newH3'>Your phone is ~8cm across</h3>
+		<img id='lengthStrip'src="../assets/drawisland.png">
 		<script type="text/javascript" src="scripts/geolocation.js"></script>
 		<script type="text/javascript" src="scripts/colorpicker.js"></script>
 	</form>

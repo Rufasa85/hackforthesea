@@ -1,13 +1,17 @@
-select{
-	width: 50%;
-	margin:0 auto;
-
+body {
+	font-family: 'Raleway', sans-serif;
 }
+
+span{
+	font-size:1.5em;
+	padding:20px;
+}
+
 
 .debrisContainer {
 	display: flex;
 	flex-wrap:wrap;
-	justify-content: right;
+	justify-content: left;
 }
 
 .debrisPhotoDiv {
@@ -23,19 +27,131 @@ select{
 	height: 100%;
 	width:100%;
 }
-#blueOption {
-	color: blue;
-	font-size: 96px;
+
+.formFlex{
+	width:35%;
+	background:#ecf0f1;
+	height: 25vh;
+	border-radius: 5px;
+	box-shadow: 1px 1px black;
+}
+
+.newH3 {
+	font-size:3em;
+}
+
+input[type=checkbox] {
+	margin:10px;
+  transform: scale(2);
+}
+.checkFlex {
+	width:45%;
+}
+
+.indexColorDiv {
+	height: 5px;
+	width:5px;
+}
+
+.lengthInput{
+	width:100%;
+	font-size:2em;
+}
+
+#colorPicker {
+	width:100%;
+	size: 50px;
+}
+
+#selectedColor {
+	display:flex;
+	align-items: center;
 }
 
 #lengthDiv{
+	width: 33%;
+	margin:0 auto;
+}
+
+#lengthStrip{
 	width: 100vw;
+	margin-top:-200px;
+	position: relative;
+	z-index: -1;
 }
-#lengthStrip {
+
+#formFlexBox {
+	display: flex;
+	justify-content: space-around;
+}
+
+#checkboxes {
+	width:60vw;
+	display: flex;
+	justify-content: space-between;
+}
+
+#finalSubmit {
 	width: 100%;
-	height: 200px;
+	font-size:50px;
+	border: 1px solid black;
+	box-shadow: 2px 2px black;
+	border-radius:5px;
+	background:#ecf0f1;
+	margin-top: 5px;
 }
-#selectedColor {
-	height: 25px;
-	width: 25px;
+
+#formImageDiv{
+	height: 20vh;
+	width:25vh;
+	margin: 0 auto;
+}
+
+#formImage {
+	width:100%;
+	height: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+#filter{
+  margin-left: 13px;
+}
+
+#upload {
+	margin-left: 13px;
+}
+
+.btn-xlarge {
+	font-weight: bold;
+    padding: 15px 22px;
+    font-size: 25px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+.btn-back {
+	font-weight: bold;
+    padding: 15px 22px;
+    font-size: 10px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+#whatever {
+	margin: 0 auto;
+}
+
+.top-buffer { 
+  margin-top:15px; 
+}
+
+#headline {
+  font-size: 500%;
 }
